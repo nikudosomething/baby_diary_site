@@ -1,0 +1,416 @@
+@font-face{font-family:'GenSenRounded';src:url('https://cdn.jsdelivr.net/gh/ButTaiwan/gensen-font@master/otf/TW/GenSenRounded2TW-M.otf') format('opentype');font-display:swap;font-weight:400 700}
+:root{--cream:#fff8e9;--paper:#fffdf8;--pink:#dd8c96;--pink-soft:#f4dad4;--yellow:#f4d76b;--ink:#2e4060;--line:rgba(46,64,96,.18);--max:1440px;--reading:680px;--photo:300px;--radius:18px;--h1-color:#dd8c96;--h2-color:#2e4060;--p-color:#2e4060}
+*{box-sizing:border-box}
+/* EDIT THESE 3 TOKENS ABOVE if you want to recolor all main text quickly. */
+h1{color:var(--h1-color)}
+h2{color:var(--h2-color)}
+p{color:var(--p-color)}
+.today h2,.today p{color:var(--cream)}
+.ending h2{color:var(--pink)}
+.ending p{color:var(--ink)}
+html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'GenSenRounded','Noto Sans TC','Microsoft JhengHei',sans-serif;overflow-x:hidden}img{display:block;max-width:100%}a{color:inherit}.eng,.date,.stamp,.eyebrow,.memory-year,.day01,.bigdate,.days,.mini-grid span,.entries>article>span,.feature-memory span,.money-copy>span,.vol,.oct,.ten{font-family:'Outfit',sans-serif}main{width:100%}.panel,.paper,.memories{width:100%;max-width:var(--max);margin-inline:auto}.panel{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 20px;position:relative}.paper,.memories{padding:76px 20px}.paper{background:var(--paper)}
+/* cover */.cover{text-align:center}.vol{font-size:11px;font-weight:600;letter-spacing:.22em;position:absolute;top:28px}.cover h1{font-size:42px;margin:0;color:var(--pink);line-height:1.15}.eng{margin:8px 0 34px;letter-spacing:.12em;font-size:13px}.date{font-size:72px;font-weight:800;line-height:.95;color:var(--yellow)}.tiny{font-size:15px;margin:14px 0 40px}.doodle{position:absolute;font-size:28px;right:12%;top:17%;transform:rotate(12deg);color:var(--pink)}.collision{position:relative;text-decoration:none;color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:13px 28px;font-weight:700;overflow:hidden;isolation:isolate}.collision:before,.collision:after{content:'';position:absolute;width:11px;height:11px;background:var(--pink);border-radius:50%;top:50%;transform:translateY(-50%);z-index:-1;transition:.42s cubic-bezier(.2,.8,.2,1)}.collision:before{left:-6px}.collision:after{right:-6px}.collision:active:before,.collision:active:after,.opened .collision:before,.opened .collision:after{width:60%;height:180%}.opened .collision{color:var(--paper)}
+/* shared mobile */.year{font:800 58px Outfit;color:var(--yellow);line-height:1;max-width:1120px;margin:0 auto}.stamp{font-size:12px;font-weight:700;letter-spacing:.16em}.entry{max-width:900px;margin:42px auto 76px;display:grid;grid-template-columns:1fr;gap:30px;align-items:center}.entry h2,.diary h2{font-size:30px;margin:.3em 0}.entry p{font-size:16px;line-height:1.9}.entry blockquote{font-size:23px;color:var(--pink);margin:28px 0;line-height:1.6}.polaroid,.photo-frame{background:#fff;padding:10px 10px 34px;box-shadow:0 10px 24px rgba(46,64,96,.10);width:min(76vw,var(--photo));margin-inline:auto}.polaroid img,.photo-frame img{width:100%;aspect-ratio:4/5;object-fit:cover}.polaroid figcaption,.photo-frame figcaption{font:500 12px Outfit;margin-top:10px}.tilt-r{transform:rotate(1deg)}
+.mini-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:12px}.mini-grid article{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--paper)}.mini-grid span{font-weight:700;font-size:12px;letter-spacing:.1em}.mini-grid p{font-size:15px;line-height:1.75;margin:8px 0 0}.pink-note{background:var(--pink-soft)!important}
+/* 10.08 */.dayone{background:var(--paper);text-align:center;border-top:8px solid var(--yellow);border-bottom:8px solid var(--yellow)}.oct{font-size:12px;font-weight:700;letter-spacing:.3em}.ten{font-size:74px;font-weight:800;line-height:.9;color:var(--pink);margin:6px 0 34px}.zoo-stack{display:flex;justify-content:center;margin:0 0 38px}.zoo-stack img{width:min(43vw,190px);aspect-ratio:4/5;object-fit:cover;border:8px solid #fff;border-bottom-width:30px;box-shadow:0 8px 20px rgba(46,64,96,.1)}.zoo-stack img:first-child{transform:rotate(-1deg) translateX(5px)}.zoo-stack img:last-child{transform:rotate(1deg) translateX(-5px)}.day-story{width:min(100%,var(--reading));font-size:16px;line-height:2;text-align:center}.sushi{display:grid;grid-template-columns:1fr;align-items:center;gap:18px;margin:42px auto;max-width:440px;text-align:center}.sushi-photo{margin:0 auto;background:#fff;padding:10px 10px 34px;width:min(72vw,280px);box-shadow:0 10px 24px rgba(46,64,96,.10);transform:rotate(-1deg)}.sushi-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}.sushi-photo figcaption{font:600 12px Outfit;margin-top:10px;text-align:left}.sushi p{margin:0}.sushi-note{font-size:14px;opacity:.8;margin-top:7px!important}.ask{font-size:20px;margin:38px 0}.day01{font-size:42px;font-weight:800;color:var(--yellow);margin-top:38px}
+/* diary */.diary header{text-align:center;max-width:900px;margin:auto}.eyebrow{letter-spacing:.22em;font-size:12px}.entries{max-width:820px;margin:auto}.text-card,.quote-card{max-width:600px;margin:64px auto;padding:24px;border:1px solid var(--line);border-radius:var(--radius)}.text-card h3{font-size:26px;margin:10px 0}.text-card p,.quote-card p{font-size:16px;line-height:1.8}.quote-card{background:var(--pink-soft)}.quote-card b{font:700 19px Outfit;color:var(--pink)}.photo-entry,.feature-memory,.money{display:grid;grid-template-columns:1fr;gap:26px;align-items:center;margin:76px auto;max-width:820px}.photo-entry img,.feature-memory img,.money img{width:min(76vw,var(--photo));aspect-ratio:4/5;object-fit:cover;background:#fff;border:10px solid #fff;border-bottom-width:34px;box-shadow:0 10px 24px rgba(46,64,96,.10);justify-self:center}.photo-entry h3,.feature-memory h3{font-size:28px;margin:8px 0}.photo-entry p,.feature-memory p,.money p{font-size:16px;line-height:1.85}.scrap-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:620px;margin:72px auto 0}.scrap-row img{width:100%;aspect-ratio:4/5;object-fit:cover;border:8px solid #fff;border-bottom-width:28px;box-shadow:0 8px 20px rgba(46,64,96,.09)}.scrap-row img:first-child{transform:rotate(-1deg)}.scrap-row img:nth-child(2){transform:rotate(1deg)}
+/* last */.last{background:var(--paper);text-align:center}.last h2{font:800 42px Outfit;margin:16px}.last-copy{font-size:20px}.pause{height:24vh}.stop{font:300 30px Outfit;line-height:1.3}.continue{margin-top:15vh;font-size:18px;line-height:2}
+/* memories */.memory-year{font-size:58px;font-weight:800;line-height:1;color:var(--pink);max-width:1120px;margin:80px auto 34px}.collage{max-width:920px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}.collage figure{margin:0;background:#fff;padding:8px 8px 28px;box-shadow:0 8px 18px rgba(46,64,96,.08)}.collage img{width:100%;aspect-ratio:4/5;object-fit:cover}.collage figcaption{margin-top:8px;font:600 11px Outfit}.feature-memory>div,.money-copy{max-width:var(--reading);margin-inline:auto;width:100%}.money strong{display:block;font:800 42px Outfit;color:var(--pink);margin:7px 0 16px}.zoo-again{max-width:720px;margin:90px auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0}.zoo-again img{width:100%;aspect-ratio:4/5;object-fit:cover;border:8px solid #fff;border-bottom-width:28px;box-shadow:0 8px 20px rgba(46,64,96,.09)}.zoo-again img:first-child{transform:rotate(-1deg)}.zoo-again img:nth-child(2){transform:rotate(1deg) translateX(-8px)}.zoo-again div{grid-column:1/-1;text-align:center;margin-top:24px;font:800 18px Outfit;line-height:1.5}.little-life{max-width:720px;margin:80px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.little-life img{width:100%;aspect-ratio:4/5;object-fit:cover;border:6px solid #fff;border-bottom-width:22px;box-shadow:0 8px 18px rgba(46,64,96,.08)}
+
+/* more memories — same polaroid system, more photos without visual chaos */
+.more-memories{max-width:1120px;margin:110px auto 40px;padding-top:70px;border-top:1px solid var(--line)}
+.more-memories header{text-align:center;max-width:620px;margin:0 auto 36px}.more-memories h2{font-size:30px;margin:8px 0 10px}.more-memories header>p:last-child{font-size:15px;line-height:1.8}
+.memory-roll{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.memory-roll figure{margin:0;background:#fff;padding:8px 8px 26px;box-shadow:0 8px 18px rgba(46,64,96,.08)}
+.memory-roll img{width:100%;aspect-ratio:4/5;object-fit:cover}.memory-roll figcaption{font:500 10px Outfit;margin-top:7px;opacity:.65}
+/* today */.today{background:var(--ink);color:var(--cream);text-align:center}.bigdate{font:800 74px Outfit;color:var(--yellow);line-height:.9}.today h2{font:700 34px Outfit;margin:16px}.hero-photo{width:min(76vw,320px);margin:36px auto;border:10px solid #fff;border-bottom-width:36px;transform:rotate(-1deg)}.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}.days{font-size:11px;opacity:.72}.letter{min-height:100svh;display:flex;flex-direction:column;justify-content:center}.letter>*{width:min(100%,var(--reading));margin-left:auto;margin-right:auto}.to{font-size:28px;color:var(--pink)}.letter-placeholder{font-size:17px;line-height:2;border-left:3px solid var(--yellow);padding-left:18px}.from{text-align:right;margin-top:46px}.ending{background:var(--yellow);text-align:center}.ending .old{opacity:.7;line-height:1.8}.ending h2{font-size:34px;color:var(--pink);line-height:1.35}.infinity{font-size:21px;margin:50px 0}.infinity span{font:800 34px Outfit}.ending a{color:var(--ink)}
+/* desktop extension */
+@media(min-width:721px){.panel{padding:90px clamp(32px,5vw,72px)}.paper,.memories{padding:100px clamp(32px,6vw,88px)}.cover h1{font-size:58px}.date{font-size:104px}.year{font-size:90px}.entry{grid-template-columns:1.05fr .95fr;gap:64px;margin:64px auto 96px}.entry h2,.diary h2{font-size:38px}.entry blockquote{font-size:30px}.mini-grid{grid-template-columns:repeat(3,1fr);gap:16px}.ten{font-size:112px}.zoo-stack img{width:260px;border-width:11px;border-bottom-width:38px}.day-story{font-size:18px}.sushi{grid-template-columns:280px 1fr;max-width:620px;text-align:left}.sushi-photo{width:280px}.memory-roll{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.more-memories h2{font-size:38px}.day01{font-size:62px}.photo-entry,.feature-memory,.money{grid-template-columns:300px 1fr;gap:54px;margin:100px auto}.photo-entry.reverse img{order:2}.photo-entry img,.feature-memory img,.money img{width:300px}.text-card,.quote-card{margin:82px auto;padding:30px}.memory-year{font-size:90px;margin-top:105px}.collage{grid-template-columns:repeat(4,1fr);gap:18px}.dense{grid-template-columns:repeat(5,1fr)}.money strong{font-size:58px}.zoo-again{grid-template-columns:250px 250px 1fr;max-width:900px}.zoo-again img{width:250px}.zoo-again div{grid-column:auto;text-align:left;margin:0;font-size:20px}.little-life{gap:16px}.bigdate{font-size:112px}.today h2{font-size:46px}.hero-photo{width:380px}.ending h2{font-size:50px}}
+@media(hover:hover){.collision:hover:before,.collision:hover:after{width:60%;height:180%}.collision:hover{color:var(--paper)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* ===== v6 visual system: notebook + controlled pop scrapbook ===== */
+:root{
+  --cream:#fff8e9;
+  --paper:#fffdf8;
+  --pink:#dd8c96;
+  --pink-soft:#f4dad4;
+  --yellow:#f4d76b;
+  --ink:#2e4060;
+  --blue:#2e4060;
+}
+body{background:var(--cream)}
+/* Notebook opening */
+.cover{min-height:100svh;padding:28px 18px 24px;background:var(--cream);overflow:hidden;perspective:1600px}
+.book-stage{position:relative;width:min(88vw,390px);aspect-ratio:3/4.25;transform-style:preserve-3d;filter:drop-shadow(0 22px 30px rgba(46,64,96,.16))}
+.book-page-preview,.book-cover{position:absolute;inset:0;border-radius:8px 18px 18px 8px}
+.book-page-preview{background:var(--paper);border:1px solid rgba(46,64,96,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px;color:var(--ink)}
+.book-page-preview:before{content:"";position:absolute;left:24px;top:0;bottom:0;border-left:1px solid rgba(221,140,150,.28)}
+.preview-date{font:700 13px Outfit;letter-spacing:.16em;color:var(--pink)}
+.book-page-preview p{font-size:22px;line-height:1.65;margin:22px 0;color:var(--ink)}
+.preview-heart{font-size:28px;color:var(--pink)}
+.book-cover{z-index:2;background:var(--pink-soft);border:1px solid rgba(46,64,96,.18);transform-origin:left center;transform-style:preserve-3d;transition:transform .95s cubic-bezier(.22,.75,.18,1),box-shadow .95s;box-shadow:inset -12px 0 22px rgba(46,64,96,.06);overflow:hidden;backface-visibility:hidden}
+.book-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(46,64,96,.12),transparent 8%,transparent 92%,rgba(255,255,255,.25));pointer-events:none}
+.book-spine{position:absolute;left:0;top:0;bottom:0;width:24px;background:rgba(221,140,150,.58);border-right:1px solid rgba(46,64,96,.12)}
+.cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(46,64,96,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(46,64,96,.055) 1px,transparent 1px);background-size:24px 24px;opacity:.7}
+.book-cover .vol{top:26px;left:42px;font-size:10px;color:var(--ink)}
+.cover-sticker{position:absolute;right:28px;top:28px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);font-size:22px;color:var(--ink);transform:rotate(8deg)}
+.cover-title-wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 30px 70px}
+.book-cover h1{font-size:42px;line-height:1.15;margin:0;color:var(--ink)}
+.book-cover .eng{margin:8px 0 28px;font-size:12px;color:var(--ink)}
+.book-cover .date{font-size:68px;color:var(--pink);text-shadow:3px 3px 0 var(--yellow)}
+.book-cover .tiny{font-size:13px;margin:14px 0 0;color:var(--ink)}
+.page-next{position:absolute;right:24px;bottom:24px;z-index:5;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font-family:inherit;font-size:14px;font-weight:700;padding:10px 14px 10px 16px;box-shadow:4px 4px 0 var(--yellow);display:flex;gap:12px;align-items:center;cursor:pointer}
+.page-next:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--yellow)}
+.cover-hint{font:500 10px Outfit;letter-spacing:.18em;text-transform:uppercase;margin:18px 0 0;opacity:.5}
+.cover.book-open .book-cover{transform:rotateY(-168deg);box-shadow:18px 8px 24px rgba(46,64,96,.08)}
+.cover.book-open .cover-hint{opacity:0}
+
+/* Pop labels inspired by memo / offset-frame references */
+.pop-label{display:inline-block;width:max-content;max-width:100%;padding:7px 12px;background:var(--paper);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--pink);color:var(--ink)!important;line-height:1;margin-bottom:10px}
+.pop-label.small{font-size:11px;padding:7px 11px;margin-inline:auto}
+
+/* Keep decoration sparse: yellow doodles only */
+.dayone,.memories{position:relative}
+.doodle-layer,.memory-doodles{position:absolute;inset:0;pointer-events:none;overflow:hidden;color:var(--yellow);font-family:Outfit,sans-serif;font-weight:800}
+.doodle-layer span,.memory-doodles span{position:absolute;z-index:0}
+.doodle-layer .d1{top:11%;right:8%;font-size:32px;transform:rotate(12deg)}
+.doodle-layer .d2{top:37%;left:7%;font-size:28px;transform:rotate(-18deg)}
+.doodle-layer .d3{bottom:15%;right:10%;font-size:26px}
+.memory-doodles span:nth-child(1){top:8%;right:6%;font-size:32px}.memory-doodles span:nth-child(2){top:38%;left:4%;font-size:24px}.memory-doodles span:nth-child(3){top:68%;right:4%;font-size:30px}
+.dayone>*:not(.doodle-layer),.memories>*:not(.memory-doodles){position:relative;z-index:1}
+
+/* Polaroid system: same frame, flexible placement */
+.polaroid,.sushi-photo,.collage figure,.memory-roll figure{border:1px solid rgba(46,64,96,.08)}
+.collage figure:nth-child(4n+1),.memory-roll figure:nth-child(5n+1){transform:rotate(-1.2deg)}
+.collage figure:nth-child(4n+2),.memory-roll figure:nth-child(5n+3){transform:rotate(.9deg)}
+.collage figure:nth-child(4n+3),.memory-roll figure:nth-child(5n+4){transform:rotate(-.5deg)}
+.memory-roll{align-items:start}
+.memory-roll figure:nth-child(6n+2){margin-top:18px}.memory-roll figure:nth-child(6n+5){margin-top:10px}
+.memory-roll figcaption{color:var(--ink);font-family:'GenSenRounded','Noto Sans TC',sans-serif;font-size:11px;opacity:.72}
+
+/* text rhythm: avoid oversized type */
+h1{font-size:clamp(34px,9vw,58px)}
+h2{font-size:clamp(27px,7vw,40px)}
+p{line-height:1.9}
+@media(min-width:721px){
+ .book-stage{width:390px}.book-cover h1{font-size:48px}.book-cover .date{font-size:78px}
+ .cover{padding-block:46px}
+}
+
+/* ===== v7 visual pass: softer notebook + clearer scrapbook language ===== */
+:root{
+  --pink:#e6a5ad;
+  --pink-soft:#fae8e5;
+  --pink-pale:#fbedeb;
+  --yellow:#f5d85e;
+  --cream:#fffaf0;
+  --paper:#fffdf8;
+  --ink:#29415f;
+  --shadow-soft:0 8px 22px rgba(46,64,96,.07);
+  --shadow-paper:0 5px 12px rgba(46,64,96,.08);
+}
+body{background:var(--cream)}
+
+/* softer physical notebook */
+.book-stage{filter:drop-shadow(0 12px 18px rgba(46,64,96,.07))}
+.book-cover{
+  background-color:var(--pink-pale)!important;
+  box-shadow:inset -8px 0 16px rgba(46,64,96,.025),0 5px 14px rgba(46,64,96,.055)!important;
+  border-color:rgba(46,64,96,.12)!important;
+}
+.book-cover:before{opacity:.45!important}
+.book-cover:after{background:rgba(205,126,139,.24)!important;box-shadow:none!important}
+.book-cover .date{text-shadow:2px 2px 0 rgba(245,216,94,.8)!important}
+.page-next{box-shadow:3px 3px 0 rgba(245,216,94,.85)!important;background:#fffdf9!important}
+.cover.book-open .book-cover{box-shadow:10px 5px 16px rgba(46,64,96,.055)!important}
+
+/* notebook-paper rhythm through diary sections */
+.before,.diary,.letter{
+  background-color:var(--paper);
+  background-image:linear-gradient(rgba(230,165,173,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(230,165,173,.055) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+
+/* pop text frames inspired by reference sheet */
+.text-card,.quote-card{
+  border:2px solid var(--ink)!important;
+  border-radius:5px!important;
+  box-shadow:5px 5px 0 var(--pink-soft)!important;
+  background:#fff!important;
+}
+.quote-card{box-shadow:5px 5px 0 var(--yellow)!important}
+.pop-label{border-radius:2px!important;box-shadow:4px 4px 0 var(--pink-soft)!important;background:#fff!important}
+.entries>article>span,.feature-memory span,.money-copy>span{
+  display:inline-block;padding:5px 9px;border:1.5px solid var(--ink);background:#fff;box-shadow:3px 3px 0 var(--yellow);font-weight:700;letter-spacing:.08em
+}
+
+/* polaroids: consistent frame, scrapbook placement */
+.polaroid,.photo-frame,.sushi-photo,.collage figure,.memory-roll figure,
+.photo-entry img,.feature-memory img,.money img,.scrap-row img,.zoo-again img,.little-life img,.hero-photo{
+  box-shadow:var(--shadow-paper)!important;
+}
+.polaroid,.photo-frame,.sushi-photo,.collage figure,.memory-roll figure{background:#fffefb!important}
+
+/* Make key photos feel like scrapbook pages rather than a plain grid */
+.collage,.memory-roll{position:relative}
+.collage figure,.memory-roll figure{border:1px solid rgba(46,64,96,.11)!important}
+.collage figure:nth-child(even),.memory-roll figure:nth-child(even){transform:rotate(1.4deg)}
+.collage figure:nth-child(odd),.memory-roll figure:nth-child(odd){transform:rotate(-1.2deg)}
+.memory-roll figure:nth-child(4n+2){margin-top:22px}
+.memory-roll figure:nth-child(4n+3){margin-top:7px}
+
+/* section headings now visibly designed */
+.memory-year{
+  width:max-content;padding:5px 14px 7px;background:var(--pink-soft);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--yellow);color:var(--ink)!important;font-size:44px!important;transform:rotate(-1deg)
+}
+.diary header h2,.more-memories h2{display:inline-block;position:relative}
+.diary header h2:after,.more-memories h2:after{content:'';position:absolute;left:-4%;right:-4%;bottom:-7px;height:8px;background:var(--yellow);opacity:.72;z-index:-1;transform:rotate(-1deg)}
+
+/* day one gets a clean scrapbook composition */
+.dayone{border:0!important;background:var(--pink-pale)!important}
+.ten{color:var(--ink)!important;text-shadow:3px 3px 0 var(--yellow)}
+.zoo-stack img,.sushi-photo{box-shadow:5px 6px 0 rgba(230,165,173,.32)!important}
+.day-story{background:rgba(255,253,248,.76);padding:22px 18px;border-radius:4px}
+.ask{display:inline-block;background:#fff;padding:14px 18px;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--yellow)}
+
+/* last entry becomes a notebook page instead of another generic panel */
+.last{background:var(--paper);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,rgba(46,64,96,.07) 32px);}
+.last h2{font-size:clamp(30px,8vw,44px)!important}
+
+/* memories are calmer cream with sparse doodles */
+.memories{background:#fffaf2}
+.memory-doodles{opacity:.68}
+.more-memories{margin-top:100px;padding-top:54px;border-top:2px dashed rgba(46,64,96,.18)}
+
+/* mobile-first scrapbook: fewer tiny cards, bigger photos */
+@media(max-width:720px){
+  .book-stage{width:min(84vw,330px)!important}
+  .book-cover{min-height:425px!important}
+  .book-cover h1{font-size:31px!important}
+  .book-cover .date{font-size:58px!important}
+  .cover{padding-block:42px!important}
+  .panel,.paper,.memories{padding-left:22px!important;padding-right:22px!important}
+  .collage{grid-template-columns:1fr 1fr!important;gap:18px 12px!important}
+  .memory-roll{grid-template-columns:1fr 1fr!important;gap:20px 12px!important}
+  .memory-roll figure,.collage figure{padding:7px 7px 24px!important}
+  .memory-roll figcaption,.collage figcaption{font-size:10px!important}
+  .memory-year{font-size:38px!important;margin-left:4px!important}
+  .little-life{grid-template-columns:1fr 1fr!important;gap:14px!important}
+  .little-life img:nth-child(3){grid-column:1/-1;width:48%;justify-self:center}
+  .photo-entry,.feature-memory,.money{gap:22px!important}
+  .photo-entry img,.feature-memory img,.money img{width:min(74vw,285px)!important}
+  .text-card,.quote-card{margin:54px auto!important}
+  .doodle-layer .d1{right:5%}.doodle-layer .d2{left:3%}
+}
+
+/* v8 — consistent dates + vertical story layouts */
+.stamp,.mini-grid span,.entries>article>span,.feature-memory span,.money-copy>span,.oct,.full-date{
+  font-family:'Outfit',sans-serif;
+  font-weight:700;
+  letter-spacing:.12em;
+  font-size:12px;
+  color:var(--ink);
+}
+.full-date{margin:0 0 10px}
+
+/* Section headings stack instead of sitting side-by-side visually */
+.diary header,.more-memories header{display:flex;flex-direction:column;align-items:center;gap:10px}
+.diary header .eyebrow,.more-memories header .eyebrow{margin:0}
+.diary header h2,.more-memories header h2{margin:0}
+
+/* Story image first, copy underneath — same on mobile and desktop */
+.entry,.photo-entry,.feature-memory,.money,.sushi{
+  grid-template-columns:1fr!important;
+  max-width:720px!important;
+  gap:24px!important;
+}
+.entry>div,.photo-entry>div,.feature-memory>div,.money-copy,.sushi>div{
+  width:min(100%,620px);
+  margin-inline:auto;
+}
+.entry .polaroid,.photo-entry img,.feature-memory img,.money img,.sushi-photo{
+  order:-1;
+}
+.photo-entry.reverse img{order:-1!important}
+.photo-entry img,.feature-memory img,.money img{
+  width:min(76vw,360px)!important;
+}
+.sushi{display:grid!important;text-align:center!important}
+.sushi-photo{width:min(72vw,320px)!important}
+
+@media(min-width:721px){
+  .entry,.photo-entry,.feature-memory,.money,.sushi{grid-template-columns:1fr!important;max-width:760px!important}
+  .entry .polaroid,.photo-entry img,.feature-memory img,.money img{width:360px!important}
+  .sushi-photo{width:320px!important}
+}
+
+/* v9 refinements */
+:root{
+  --pink:#e8aab2;
+  --pink-soft:#f9e3e0;
+  --pink-pale:#fdf1ef;
+  --cover-pink:#f8e4e3;
+  --inside-pink:#e9a0aa;
+  --yellow:#f2cf4f;
+}
+/* lighter cover, softer depth */
+.book-cover{background-color:var(--cover-pink)!important;border-color:rgba(46,64,96,.11)!important;box-shadow:inset -7px 0 14px rgba(46,64,96,.035)!important}
+.book-cover:after{background:rgba(205,126,139,.12)!important}
+.book-spine{background:rgba(210,133,146,.34)!important}
+.book-stage{filter:drop-shadow(0 8px 13px rgba(46,64,96,.055))!important}
+.cover.book-open .book-cover{box-shadow:7px 4px 12px rgba(46,64,96,.04)!important}
+/* inside page needs enough contrast against cream */
+.book-page-preview{background:#fffaf6!important;border-color:rgba(46,64,96,.13)!important}
+.book-page-preview:before{background:var(--inside-pink)!important;opacity:.42!important}
+.preview-date{color:var(--inside-pink)!important;font-weight:800!important}
+.preview-heart{color:var(--inside-pink)!important}
+.book-page-preview p{color:var(--ink)!important}
+/* one consistent date treatment */
+.date-label,.text-card>span,.quote-card>span,.feature-memory .date-label,.money-copy .date-label{
+  display:inline-block;width:max-content;padding:5px 9px 4px;border:1.5px solid var(--ink);
+  background:#fff;box-shadow:3px 3px 0 var(--pink-soft);font:700 11px Outfit!important;
+  letter-spacing:.08em;line-height:1;color:var(--ink)!important;margin-bottom:8px
+}
+/* DAY 01: remove awkward empty block, increase yellow contrast */
+.dayone{min-height:auto!important;padding-top:72px!important;padding-bottom:76px!important}
+.day01{margin:48px auto 0!important;padding:12px 24px!important;width:max-content;max-width:calc(100% - 40px);font-size:38px!important;line-height:1!important;color:var(--ink)!important;background:var(--yellow)!important;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--pink);border-radius:2px}
+.day-story{margin-bottom:0!important}
+@media(min-width:721px){.dayone{padding-top:96px!important;padding-bottom:96px!important}.day01{font-size:50px!important}}
+
+
+/* ===== v10 fixes ===== */
+/* Prevent the inside-page copy from bleeding through the closed cover. */
+.book-page-preview{z-index:1;opacity:0;transition:opacity .18s ease .22s}
+.book-cover{z-index:3;isolation:isolate}
+.cover.book-open .book-page-preview{opacity:1}
+.cover:not(.book-open) .book-page-preview{visibility:hidden}
+.cover.book-open .book-page-preview{visibility:visible}
+
+.last-copy{width:min(100%,600px);margin:28px auto 0;text-align:left}
+.last-copy p{font-size:16px;line-height:1.9;margin:0 0 12px}
+
+.zoo-memory,.baseball-memory{max-width:760px;margin:86px auto;text-align:center}
+.zoo-memory h3,.baseball-memory h3{font-size:28px;margin:12px 0 22px}
+.zoo-memory>p,.baseball-memory p{font-size:16px;line-height:1.85}
+.zoo-again{grid-template-columns:repeat(3,1fr)!important;gap:8px!important;margin:28px auto!important;max-width:720px!important}
+.zoo-again img{width:100%!important;transform:none!important;border:7px solid #fff!important;border-bottom-width:24px!important}
+.zoo-again img:nth-child(1){transform:rotate(-1deg)!important}.zoo-again img:nth-child(2){transform:rotate(.8deg)!important}.zoo-again img:nth-child(3){transform:rotate(-.5deg)!important}
+.baseball-memory{display:grid;grid-template-columns:1fr;gap:24px;text-align:left}
+.baseball-memory figure{margin:0 auto;background:#fff;padding:9px 9px 30px;width:min(76vw,320px);box-shadow:0 8px 18px rgba(46,64,96,.08);transform:rotate(-.6deg)}
+.baseball-memory img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.baseball-memory>div{width:min(100%,var(--reading));margin:auto}
+@media(min-width:721px){.baseball-memory{grid-template-columns:340px 1fr;align-items:center;gap:48px}.baseball-memory figure{width:340px}.zoo-again{gap:16px!important}}
+
+/* v11 ending: centered, quiet, with LINE CTA */
+.ending{background:var(--yellow);text-align:center;display:flex;align-items:center;justify-content:center;min-height:100svh;padding-top:120px;padding-bottom:120px}
+.ending-core{width:min(100%,520px);margin:auto;display:flex;flex-direction:column;align-items:center}
+.ending .infinity{margin:0;color:var(--ink);font-size:22px;line-height:1.7}
+.ending .infinity span{display:block;font:800 clamp(34px,10vw,52px)/1 Outfit,sans-serif;margin-top:6px}
+.ending .continued{margin:18px 0 0;color:var(--ink);font:600 14px/1.5 Outfit,sans-serif}
+.hug-button{display:inline-flex;align-items:center;justify-content:center;margin-top:78px;min-height:52px;padding:13px 22px;background:var(--paper);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--pink);color:var(--ink);font:700 15px/1.3 inherit;cursor:pointer;position:relative;z-index:2;transition:transform .16s ease,box-shadow .16s ease}
+.hug-button:active,.hug-button.is-popping{transform:translate(3px,3px) scale(.96);box-shadow:2px 2px 0 var(--pink)}
+.ending-core{position:relative}
+.heart-burst{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:4}
+.burst-heart{position:absolute;left:50%;top:72%;font-family:Outfit,sans-serif;font-weight:800;color:var(--pink);font-size:var(--heart-size,24px);line-height:1;pointer-events:none;will-change:transform,opacity;animation:heart-pop 1.25s cubic-bezier(.18,.7,.2,1) forwards}
+.burst-heart:nth-child(3n){color:var(--ink)}
+.burst-heart:nth-child(4n){color:#fff}
+@keyframes heart-pop{0%{opacity:0;transform:translate(-50%,-20%) scale(.35) rotate(0deg)}12%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--heart-x)),calc(-160px + var(--heart-y))) scale(1.25) rotate(var(--heart-r))}}
+@media (prefers-reduced-motion:reduce){.burst-heart{animation-duration:.01ms}}
+.rewatch{margin-top:42px;color:var(--ink)!important;font-size:13px;text-underline-offset:4px;opacity:.72}
+@media(min-width:721px){.ending{padding-top:150px;padding-bottom:150px}.hug-button{margin-top:92px}}
+
+/* v13 interaction fixes */
+.burst-heart{position:fixed;z-index:99999;pointer-events:none;font-family:Outfit,sans-serif;font-size:var(--heart-size,24px);color:var(--pink-strong,#dd8c96);line-height:1;transform:translate(-50%,-50%);animation:heart-pop .9s cubic-bezier(.18,.75,.25,1) forwards}
+@keyframes heart-pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.45) rotate(0)}12%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--heart-x)),calc(-50% + var(--heart-y))) scale(1.25) rotate(var(--heart-r))}}
+.memory-doodles{display:none!important}
+
+/* ===== v14: unified page sprinkles ===== */
+.before,.dayone,.diary,.last,.memories,.today,.letter{position:relative}
+.page-sprinkles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.page-sprinkles span{position:absolute;font-family:Outfit,sans-serif;font-weight:800;line-height:1;opacity:.88}
+.page-sprinkles span:nth-child(odd){color:var(--yellow)}
+.page-sprinkles span:nth-child(even){color:var(--pink)}
+.page-sprinkles span:nth-child(1){left:3.5%;top:13%;font-size:27px;transform:rotate(-14deg)}
+.page-sprinkles span:nth-child(2){right:4%;top:38%;font-size:31px;transform:rotate(12deg)}
+.page-sprinkles span:nth-child(3){left:5%;top:64%;font-size:23px;transform:rotate(9deg)}
+.page-sprinkles span:nth-child(4){right:5%;top:82%;font-size:26px;transform:rotate(-10deg)}
+.before>.page-sprinkles~*,.dayone>.page-sprinkles~*,.diary>.page-sprinkles~*,.last>.page-sprinkles~*,.memories>.page-sprinkles~*,.today>.page-sprinkles~*,.letter>.page-sprinkles~*{position:relative;z-index:1}
+/* retire old one-off doodle system */
+.doodle-layer,.memory-doodles{display:none!important}
+@media(max-width:720px){
+  .page-sprinkles span{opacity:.72}
+  .page-sprinkles span:nth-child(n+3){display:none}
+  .page-sprinkles span:nth-child(1){left:2%;top:18%;font-size:18px}
+  .page-sprinkles span:nth-child(2){right:2%;top:72%;font-size:20px}
+}
+
+
+/* ===== v15 cleanup ===== */
+/* No floating page decorations. Hearts/stars that belong to actual copy remain. */
+.page-sprinkles,.doodle-layer,.memory-doodles{display:none!important}
+
+/* 10.08 zoo pair: give the two prints breathing room and fan them outward. */
+.zoo-stack{gap:18px!important;align-items:flex-start!important}
+.zoo-stack img:first-child{transform:rotate(-3.2deg)!important;translate:0 3px}
+.zoo-stack img:last-child{transform:rotate(3.2deg)!important;translate:0 3px}
+
+/* One polaroid frame language throughout the story. */
+.polaroid,.photo-frame,.sushi-photo,.collage figure,.memory-roll figure,.baseball-memory figure{
+  background:#fffefb!important;
+  padding:8px 8px 28px!important;
+  border:1px solid rgba(46,64,96,.09)!important;
+  box-shadow:0 8px 18px rgba(46,64,96,.08)!important;
+}
+.photo-entry img,.feature-memory img,.money img,.scrap-row img,.zoo-again img,.little-life img{
+  background:#fffefb!important;
+  border:8px solid #fffefb!important;
+  border-bottom-width:28px!important;
+  box-shadow:0 8px 18px rgba(46,64,96,.08)!important;
+}
+.hero-photo{
+  background:#fffefb!important;
+  border:8px solid #fffefb!important;
+  border-bottom-width:28px!important;
+  box-shadow:0 8px 18px rgba(46,64,96,.08)!important;
+}
+.zoo-stack img{
+  background:#fffefb!important;
+  border:8px solid #fffefb!important;
+  border-bottom-width:28px!important;
+  box-shadow:0 8px 18px rgba(46,64,96,.08)!important;
+}
+@media(min-width:721px){
+  .zoo-stack{gap:34px!important}
+  .zoo-stack img:first-child{transform:rotate(-3.5deg)!important}
+  .zoo-stack img:last-child{transform:rotate(3.5deg)!important}
+}
+@media(max-width:720px){
+  .zoo-stack{gap:12px!important}
+  .zoo-stack img{width:min(39vw,190px)!important}
+}
+
+/* ===== v16 polaroid depth + paired-photo fan ===== */
+/* Restore the original scrapbook depth: a crisp pink paper layer offset to the lower-right. */
+.polaroid,.photo-frame,.sushi-photo,.collage figure,.memory-roll figure,.baseball-memory figure{
+  box-shadow:7px 7px 0 rgba(244,202,205,.78), 0 8px 18px rgba(46,64,96,.07)!important;
+}
+.photo-entry img,.feature-memory img,.money img,.scrap-row img,.zoo-again img,.little-life img,.hero-photo,.zoo-stack img{
+  box-shadow:7px 7px 0 rgba(244,202,205,.78), 0 8px 18px rgba(46,64,96,.07)!important;
+}
+
+/* Two-photo story pairs open outward like \\   / rather than sitting parallel. */
+.scrap-row{gap:24px!important;align-items:start!important}
+.scrap-row img:first-child{transform:rotate(-3deg)!important;transform-origin:50% 90%}
+.scrap-row img:nth-child(2){transform:rotate(3deg)!important;transform-origin:50% 90%}
+
+@media(min-width:721px){
+  .scrap-row{gap:38px!important}
+  .scrap-row img:first-child{transform:rotate(-3.4deg)!important}
+  .scrap-row img:nth-child(2){transform:rotate(3.4deg)!important}
+}
+@media(max-width:720px){
+  .scrap-row{gap:14px!important}
+  .scrap-row img:first-child{transform:rotate(-2.4deg)!important}
+  .scrap-row img:nth-child(2){transform:rotate(2.4deg)!important}
+}
