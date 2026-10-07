@@ -414,3 +414,15 @@ body{background:var(--cream)}
   .scrap-row img:first-child{transform:rotate(-2.4deg)!important}
   .scrap-row img:nth-child(2){transform:rotate(2.4deg)!important}
 }
+
+/* ===== v17 diary additions ===== */
+.diary-photo-pair,.mirror-memory{max-width:900px;margin:96px auto;display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+.pair-copy,.mirror-copy{max-width:650px;margin-inline:auto}.pair-copy h3,.mirror-copy h3{font-size:28px;margin:12px 0}.pair-copy p,.mirror-copy p{font-size:16px;line-height:1.9}
+.fan-pair{display:flex;justify-content:center;align-items:flex-start;gap:20px;padding:16px 8px 28px}
+.fan-pair img,.mirror-shot{background:#fffefb;border:1px solid rgba(46,64,96,.1);box-shadow:7px 7px 0 #f3d6d8,0 10px 22px rgba(46,64,96,.08)}
+.fan-pair img{width:min(40vw,250px);aspect-ratio:4/5;object-fit:cover;padding:9px 9px 32px;box-sizing:border-box}
+.fan-pair img:first-child{transform:rotate(-3deg);transform-origin:50% 90%}.fan-pair img:last-child{transform:rotate(3deg);transform-origin:50% 90%}
+.mirror-shot{margin:0 auto;padding:9px 9px 32px;width:min(76vw,330px);transform:rotate(1.5deg)}.mirror-shot img{width:100%;display:block}
+.letter-punch{font-size:20px!important;color:var(--pink);font-weight:700;margin-top:30px!important}.letter-placeholder b{font-size:19px}
+@media(min-width:721px){.diary-photo-pair{grid-template-columns:.8fr 1.2fr;gap:54px}.mirror-memory{grid-template-columns:1.15fr .85fr;gap:58px}.fan-pair{gap:34px}.fan-pair img{width:250px}.mirror-shot{width:330px}}
+@media(max-width:720px){.fan-pair{gap:12px}.fan-pair img{width:42vw;transform-origin:50% 92%}.fan-pair img:first-child{transform:rotate(-2.2deg)}.fan-pair img:last-child{transform:rotate(2.2deg)}}
